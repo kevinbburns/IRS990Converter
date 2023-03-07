@@ -6,7 +6,7 @@ My previous machine was a Ryzen 7 3700, liquid-cooled with similar memory and st
 
 I had initially reached out to the IRS for a schema, which you have to request formally, even though the files are readily available. The agent and I chuckled, but red tape is red tape. She had sent me a few XSD files. Still, she also warned me that sometimes they didn't align and was warned that previous developers continuously had issues trying to serialize/deserialize the data, so I began my journey.
 
-Each 990 return may, or may not have missing properties from the file, so instead of each XML file containing every combination, you were left with missing pieces that you had to pick up. Without a working XSD that could include all possible data combinations, you would unintentionally omit data that could be important to future analysis. So I did what any data hacker would do; I started chucking every tool I had until it made some damn sense.
+Each 990 return may, or may not have missing properties from file to file, so instead of each XML file containing every combination, you were left with missing pieces that you had to pick up. Without a working XSD that could include all possible data combinations, you would unintentionally omit data that could be important to future analysis. So I did what any data hacker would do; I started chucking every tool I had until it made some damn sense.
 
 As I said before, the biggest hurdle is the sheer amount of files, and each XML file was rather large (figuratively speaking, for an XML at least.), so each iteration of ideas had to be thought out properly.
 
