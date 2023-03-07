@@ -2,7 +2,7 @@ I recently had to work aggregating a tremendous amount of data from the IRS's 99
 
 I have a Ryzen 9 6900HX, 64 GB DDR5, and a PCI-4 NVME, which still takes about an hour. 
 
-My previous machine was a Ryzen 7 4900, liquid-cooled with similar memory and storage, only DDR4 instead, and the process of extracting took a little over an hour.
+My previous machine was a Ryzen 7 3700, liquid-cooled with similar memory and storage, only DDR4 instead, and the process of extracting took several hours.
 
 I had initially reached out to the IRS for a schema, which you have to request formally, even though the files are readily available. The agent and I chuckled, but red tape is red tape. She had sent me a few XSD files. Still, she also warned me that sometimes they didn't align and was warned that previous developers continuously had issues trying to serialize/deserialize the data, so I began my journey.
 
