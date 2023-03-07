@@ -193,7 +193,7 @@ async Task UploadLocalToAzure()
     await Task.WhenAll(tasks).ConfigureAwait(false);
 }
 
-async Task<IReadOnlyCollection<string>> GetImportedFiles()
+async Task<IReadOnlyCollection<string>> GetImportedFiles(string fileNameBeginsWithYear)
 {
     CosmosClientOptions options = new CosmosClientOptions() {AllowBulkExecution = true};
     using var cosmosContext = new CosmosClient(connectString, options);
@@ -201,9 +201,14 @@ async Task<IReadOnlyCollection<string>> GetImportedFiles()
 
     var list = new List<string>();
 
+    //Each year's worth of returns consists of a handful of zips, usually around 8. To make
+    //life easier, I had broken everything down into years. The last round of data, and most
+    //recently released happened to be 2020 in this case. In a previous version, I had created
+    //a task for each year, and ran it through a list, i.e. list<Task>{ task2015,task2016,task2017,task2018};
+    //and did a Task.WhenAll(listOfTasks.) That worked great, but your computer is unusuable about the entire time.
     var irs990Iterator =
         container.GetItemQueryIterator<string>
-            ("SELECT distinct value c.file_name FROM c where c.file_name like \"2020%\"");
+            ($"SELECT distinct value c.file_name FROM c where c.file_name like \"{fileNameBeginsWithYear}%\"");
 
     var res = await irs990Iterator.ReadNextAsync();
     foreach (var prevFile in res.Resource)
