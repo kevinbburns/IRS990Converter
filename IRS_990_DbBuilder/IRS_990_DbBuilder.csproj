@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net8.0</TargetFramework>
+        <RuntimeIdentifier>linux-x64</RuntimeIdentifier>
+        <PublishSingleFile>true</PublishSingleFile>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+    <ItemGroup>
+      <PackageReference Include="Goblinfactory.Konsole" Version="6.2.2" />
+      <PackageReference Include="JsonFlatten" Version="1.0.2" />
+      <PackageReference Include="MongoDB.Driver" Version="2.23.1" />
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    </ItemGroup>
+</Project>
