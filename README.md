@@ -1,4 +1,4 @@
-![IRS_990_DbBuilder-v2](https://github.com/kevinbburns/IRS990Converter/assets/825269/f53609e9-576c-471b-aaee-08acead36225)I recently had to work aggregating a tremendous amount of data from the IRS's 990 repositories. Amazon AWS used to have a free database, but it has since been discontinued. You must manually go to the IRS website and download the individual files. Most years have eight total zip files, all about 400MB each. When uncompressed, there are about 458,000+ files in each archive, so the user beware. You are in a tough time if you do not have the storage, memory, and processing power.
+I recently had to work aggregating a tremendous amount of data from the IRS's 990 repositories. Amazon AWS used to have a free database, but it has since been discontinued. You must manually go to the IRS website and download the individual files. Most years have eight total zip files, all about 400MB each. When uncompressed, there are about 458,000+ files in each archive, so the user beware. You are in a tough time if you do not have the storage, memory, and processing power.
 
 I had initially reached out to the IRS for a schema, which you have to request formally, even though the files are readily available. The agent and I chuckled, but red tape is red tape. She had sent me a few XSD files. Still, she also warned me that sometimes they didn't align and was warned that previous developers continuously had issues trying to serialize/deserialize the data, so I began my journey.
 
@@ -32,7 +32,7 @@ I included a newer JSON Schema and DTO for the latest changes in 2023. I didn't 
 I also used Allan Hemming's (GoblinFactory) to show some output on the console.
 
 
-![Konsole](IRS_990_DbBuilder-v2.png) 
+![IRS_990_DbBuilder-v2](https://github.com/kevinbburns/IRS990Converter/assets/825269/f53609e9-576c-471b-aaee-08acead36225)
 
 
 
