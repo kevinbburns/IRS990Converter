@@ -109,7 +109,7 @@ public static class InternalProgram
                 .Replace("irs:","",StringComparison.CurrentCultureIgnoreCase)
                 .Trim();
            
-            jsonString = ConvertUnicodeToAscii(jsonString);
+            //jsonString = ConvertUnicodeToAscii(jsonString);
     
             dynamic json =
                 JsonConvert.DeserializeObject<ExpandoObject>(
@@ -154,6 +154,9 @@ public static class InternalProgram
                     NullValueHandling = NullValueHandling.Include,
                     MissingMemberHandling = MissingMemberHandling.Ignore
                 });
+
+            //Moved further down after getting rid of all the unwanted data.
+            jsonOBj = ConvertUnicodeToAscii(jsonOBj);
     
             var res = JsonConvert.DeserializeObject<Return>(jsonOBj);
             if (res == null)
@@ -205,18 +208,20 @@ public static class InternalProgram
     
     private static string ConvertUnicodeToAscii(string unicode)
     {
-        var ascii = string.Empty;
-        var normalized = unicode.Normalize(NormalizationForm.FormKD);
-    
-        foreach (var c in normalized)
-        {
-            if ((c < ' ') || (c > 127))
-                continue;
-            
-            ascii += c;
-        }
-    
-        return ascii;
+        var charArray = unicode.AsParallel().AsOrdered().Select(c => c < 128 ? c : '?').ToArray();
+        return new string(charArray);
+        // var ascii = string.Empty;
+        // var normalized = unicode.Normalize(NormalizationForm.FormKD);
+        //
+        // foreach (var c in normalized)
+        // {
+        //     if ((c < ' ') || (c > 127))
+        //         continue;
+        //     
+        //     ascii += c;
+        // }
+        //
+        // return ascii;
     }
 
 

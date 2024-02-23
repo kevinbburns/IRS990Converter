@@ -244,8 +244,25 @@ public class IRS990Minified
     [JsonProperty("SupplementalNonqualRtrPlanInd")]
     public string? SupplementalNonqualRtrPlanInd { get; set; }
 
-    [JsonProperty("RltdOrgOfficerTrstKeyEmplGrp")]
-    public List<RltdOrgOfficerTrstKeyEmplGrp> RltdOrgOfficerTrstKeyEmplGrp { get; set; }
+    public string Name { get; set; }
+
+    public string Title { get; set; }
+
+    public string BaseCompensationFilingOrgAmt { get; set; }
+    
+    public string BonusFilingOrganizationAmount	{ get; set; }
+    public string BonusRelatedOrganizationsAmt	{ get; set; }
+    public string OtherCompensationFilingOrgAmt	{ get; set; }
+    public string OtherCompensationRltdOrgsAmt	{ get; set; }
+    public string DeferredCompensationFlngOrgAmt	{ get; set; }
+    public string DeferredCompRltdOrgsAmt	{ get; set; }
+        public string NontaxableBenefitsFilingOrgAmt{ get; set; }	
+        public string NontaxableBenefitsRltdOrgsAmt	{ get; set; }
+        public string TotalCompensationFilingOrgAmt	{ get; set; }
+        public string TotalCompensationRltdOrgsAmt	{ get; set; }
+        public string CompReportPrior990FilingOrgAmt	{ get; set; }
+        public string CompReportPrior990RltdOrgsAmt{ get; set; }
+
 }
 
 public class JsonErrorStringValue
